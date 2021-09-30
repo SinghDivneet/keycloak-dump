@@ -1,0 +1,9 @@
+# Start an embedded server using the HA config
+embed-server --server-config=standalone-ha.xml --std-out=echo
+
+# Run custom jboss scripts
+run-batch --file=/opt/jboss/keycloak/cli/jgroups.cli
+run-batch --file=/opt/jboss/keycloak/cli/load-balancer.cli
+
+# Stop the embedded server
+stop-embedded-server
